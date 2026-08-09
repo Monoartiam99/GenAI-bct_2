@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Skincare AI</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<nav>
+
+    <div class="logo">
+        🧴 Skincare AI
+    </div>
+
+    <ul>
+
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Analysis</a></li>
+        <li><a href="#">Chat</a></li>
+
+    </ul>
+
+</nav>
+
+
+<section class="hero">
+
+    <div class="hero-text">
+
+        <h1>AI Powered Skin Analysis</h1>
+
+        <p>
+
+            Upload your face image and let AI analyze
+            your skin, detect concerns and generate
+            personalized skincare routines.
+
+        </p>
+
+        <button id="scrollBtn">
+            Start Analysis
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<section class="upload-section" id="upload">
+
+    <h2>Upload Your Face</h2>
+
+    <div class="upload-box">
+
+        <input
+            type="file"
+            id="imageInput"
+            accept="image/*"
+        >
+
+        <img
+            id="preview"
+            src=""
+            alt="Preview"
+        >
+
+        <button id="analyzeBtn">
+
+            Analyze Skin
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<section class="results">
+
+    <h2>Analysis Result</h2>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>Skin Type</h3>
+
+            <p id="skinType">
+                --
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Confidence</h3>
+
+            <p id="confidence">
+                --
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Concerns</h3>
+
+            <ul id="concerns">
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<section class="routine">
+
+    <h2>Recommended Routine</h2>
+
+    <div class="routine-container">
+
+        <div class="routine-card">
+
+            <h3>Morning</h3>
+
+            <ul id="morningRoutine">
+
+            </ul>
+
+        </div>
+
+        <div class="routine-card">
+
+            <h3>Night</h3>
+
+            <ul id="nightRoutine">
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<section class="chat-section">
+
+    <h2>Ask AI</h2>
+
+    <div class="chat-box" id="chatBox">
+
+    </div>
+
+    <div class="chat-input">
+
+        <input
+            type="text"
+            id="message"
+            placeholder="Ask anything about your skin..."
+        >
+
+        <button id="sendBtn">
+
+            Send
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<footer>
+
+    © 2026 Skincare AI • Built with AI
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
