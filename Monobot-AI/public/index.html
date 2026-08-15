@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gemini AI Assistant</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="app">
+      <!-- ================= SIDEBAR ================= -->
+      <aside class="sidebar">
+        <div class="logo">
+          <div class="logo-icon">
+            <i class="ri-robot-2-fill"></i>
+          </div>
+          <div>
+            <h2>Gemini AI</h2>
+            <span>Tool Calling Demo</span>
+          </div>
+        </div>
+
+        <button id="newChatBtn" class="new-chat">
+          <i class="ri-add-line"></i>
+          New Chat
+        </button>
+
+        <div class="tool-section">
+          <h3>Available Tools</h3>
+          <div id="toolList" class="tool-list">
+            <div class="loading-tools">Loading tools...</div>
+          </div>
+        </div>
+
+        <button id="clearChatBtn" class="clear-chat">
+          <i class="ri-delete-bin-line"></i>
+          Clear Conversation
+        </button>
+      </aside>
+
+      <!-- ================= CHAT ================= -->
+      <main class="chat-container">
+        <header class="chat-header">
+          <div>
+            <h1>Gemini AI Assistant</h1>
+            <p>Powered by Gemini + Tool Calling</p>
+          </div>
+          <div class="status">
+            <span class="dot"></span>
+            Online
+          </div>
+        </header>
+
+        <section id="chatBox" class="chat-box">
+          <div class="welcome">
+            <div class="welcome-icon">
+              <i class="ri-sparkling-2-fill"></i>
+            </div>
+            <h2>Welcome 👋</h2>
+            <p>Ask me anything. I can use tools like:</p>
+
+            <div class="welcome-grid">
+              <div class="card">🌦 Weather</div>
+              <div class="card">🔎 Google Search</div>
+              <div class="card">🧮 Calculator</div>
+              <div class="card">🕒 Current Time</div>
+              <div class="card">🛒 Product Search</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- typing indicator -->
+        <div id="typingIndicator" class="typing hidden">
+          <div class="typing-avatar">🤖</div>
+          <div class="typing-bubble">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+        <!-- ================= INPUT AREA ================= -->
+        <footer class="chat-input-area">
+          <div class="input-wrapper">
+            <button id="attachBtn" class="icon-btn" title="Attach File">
+              <i class="ri-attachment-2"></i>
+            </button>
+
+            <textarea
+              id="messageInput"
+              placeholder="Message Gemini AI..."
+              rows="1"
+            ></textarea>
+
+            <button id="sendBtn" class="send-btn">
+              <i class="ri-send-plane-fill"></i>
+            </button>
+          </div>
+
+          <p class="footer-text">
+            Gemini may use tools like Google Search, Calculator, Weather and
+            Product Search to answer your questions.
+          </p>
+        </footer>
+      </main>
+    </div>
+
+    <!-- ================= TOOL CALL MODAL ================= -->
+    <div id="toolModal" class="tool-modal hidden">
+      <div class="tool-modal-content">
+        <div class="tool-header">
+          <h3>
+            <i class="ri-tools-fill"></i>
+            Tool Execution
+          </h3>
+          <button id="closeToolModal">
+            <i class="ri-close-line"></i>
+          </button>
+        </div>
+
+        <div id="toolExecutionArea"></div>
+      </div>
+    </div>
+
+    <!-- ================= TOAST ================= -->
+    <div id="toast" class="toast hidden">
+      <span id="toastMessage"></span>
+    </div>
+
+    <!-- ================= LOADING ================= -->
+    <div id="loadingOverlay" class="loading-overlay hidden">
+      <div class="loader">
+        <div class="spinner"></div>
+        <p>Gemini is thinking...</p>
+      </div>
+    </div>
+
+    <!-- Markdown Renderer -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- Highlight.js -->
+    <script src="https://cdn.jsdelivr.net/npm/highlight.js/lib/common.min.js"></script>
+    <script>
+      marked.setOptions({
+        breaks: true,
+        gfm: true,
+      });
+    </script>
+
+    <!-- Main Script -->
+    <script src="script.js"></script>
+  </body>
+</html>
